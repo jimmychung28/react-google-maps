@@ -53,7 +53,6 @@ export function withScriptjs(BaseComponent) {
       // Don't load scriptjs as a dependency since we do not want this module be used on server side.
       // eslint-disable-next-line global-require
       const scriptjs = require(`scriptjs`)
-      const { googleMapURL } = this.props
       scriptjs(googleMapURL, this.handleLoaded)
     }
 
