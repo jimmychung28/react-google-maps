@@ -37,15 +37,12 @@ export function withScriptjs(BaseComponent) {
       })
     }
 
-    componentWillMount() {
+    componentDidMount() {
       const { loadingElement, googleMapURL } = this.props
       invariant(
         !!loadingElement && !!googleMapURL,
         `Required props loadingElement or googleMapURL is missing. You need to provide both of them.`
       )
-    }
-
-    componentDidMount() {
       const { loadingState } = this.state
       if (loadingState !== LOADING_STATE_NONE || !canUseDOM) {
         return
